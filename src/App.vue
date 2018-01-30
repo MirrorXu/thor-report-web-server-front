@@ -1,12 +1,11 @@
 <template>
   <div id="app">
     <div id="header">
-      索真报告系统
-    </div>
-    <div id="nav">
-      <!--<router-link to="/">欢迎</router-link>-->
-      <router-link to="/template">模板中心</router-link>
-      <router-link to="/edit">编辑</router-link>
+      <h1 id="header-name" >索真报告网页化系统</h1>
+      <div id="nav-bar">
+        <router-link to="/template">模板中心</router-link>
+        <router-link to="/">欢迎</router-link>
+      </div>
     </div>
     <div id="content">
       <router-view/>
@@ -23,59 +22,87 @@
 <style scoped lang="less">
   #app {
     position: relative;
-    width: 100%;
-    height: 100%;
-    background: seagreen;
+    left: 10%;
+    top: 4%;
+    width: 80%;
+    height: 92%;
     overflow: hidden;
-    @header-h: 80px;
-    @nav-w: 80px;
+
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0 1px hsla(0,0%,100%,.3) inset,
+    0 .5em 1em rgba(0, 0, 0, 0.6);
+    text-shadow: 0 1px 1px hsla(0,0%,100%,.3);
+    background: hsla(0,0%,100%,0.5);
+
+
+    @header-h: 90px;
     #header {
-      position: fixed;
+      position: absolute;
       width: 100%;
       height: @header-h;
-      background: #006699;
+      /*background: #006699;*/
+      background: hsla(0,0%,100%,0.5);
       z-index: 11;
       overflow: hidden;
-      text-align: center;
-      line-height: @header-h;
-      font-size: 30px;
-      color: white;
-    }
-    #nav {
-      position: fixed;
-      width: @nav-w;
-      height: 100%;
-      background: yellow;
-      padding-top: @header-h;
-      z-index: 10;
-      overflow: hidden;
-      a{
-        @color:#fff;
-        display: block;
-        width: @nav-w;
-        height: @nav-w;
-        background: #006699;
-        &:link{
-          color: @color;
-        }
-        &:visited{
-          color: @color;
-        }
-        &:hover{
-          color: @color;
-        }
-        &:active{
-          color: @color;
-        }
+      /*border-bottom: 2px solid rgba(255,255,255,0.5);*/
+      #header-name{
+        height: @header-h;
+        line-height: @header-h;
+        font-size: 1.6rem;
+        text-align: center;
+        color: #666666;
       }
+      #nav-bar{
+        @h:30px;
+        width: 100%;
+        height:@h;
+        text-align: right;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        display: inline-block;
+        /*background: seagreen;*/
+        a{
+          text-decoration: none;
+          float: right;
+          display: block;
+          height: @h;
+          line-height: @h;
+          font-size: 0.8rem;
+          color: #303133;
+          margin-left: 10px;
+          padding: 0 20px;
+          background: rgba(255,255,255 , 0.7);
+          box-shadow: 0 0 0 1px hsla(0,0%,100%,.6) inset;
+          position: relative;
+          top: 2px;
+          border-radius: 3px ;
+        }
+        a:first-child{
+          margin-right: 10px;
+        }
+
+      }
+
     }
+
     #content {
        width: 100%;
       height: 100%;
-      padding-left: @nav-w;
       padding-top: @header-h;
-      background: azure;
+      padding-bottom: 5%;
       color: #333;
     }
+  }
+  #app::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    z-index: -1;
+    filter: blur(50px);
+    background-image:url('http://pic1.win4000.com/wallpaper/2018-01-17/5a5ec530235bf.jpg' );
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 </style>
