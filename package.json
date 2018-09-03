@@ -1,7 +1,7 @@
 {
   "name": "thor-report-web-server-front",
   "version": "1.0.0",
-  "description": "A Vue.js project",
+  "description": "报告自动化模板管理系统",
   "author": "MirrorXu <xuxulee@163.com>",
   "private": true,
   "scripts": {
