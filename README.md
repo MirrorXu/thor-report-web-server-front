@@ -1,6 +1,6 @@
 # thor-report-web-server-front
 
-> A Vue.js project
+> 索真科研报告后台管理系统
 
 ## Build Setup
 
